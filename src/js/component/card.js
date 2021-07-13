@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export const Card = () => {
+	const [personajes, setPersonajes] = useState([]);
+	useEffect(() => {
+		fetch("https://www.swapi.tech/api/people/1")
+			.then(response => response.json()) //Header o saber qué pasó con llamada
+			.then(data => {
+				// Se procesa la información
+				setPersonajes(data);
+			});
+	}, []);
+	const listPersonajes = personajes.map(personaje => (
+		<li key={personaje.id}>
+			{personaje.name} - {personaje.species}
+		</li>
+	));
+
 	return (
 		<div className="card" style={{ width: "18rem" }}>
 			<img
@@ -9,7 +24,9 @@ export const Card = () => {
 				alt="Card image cap"
 			/>
 			<div className="card-body">
-				<h5 className="card-title">Card title</h5>
+				<h5 className="card-title">
+					<ul>{listPersonajes}</ul>
+				</h5>
 				<p className="card-text">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</p>
