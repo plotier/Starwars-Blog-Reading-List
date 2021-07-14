@@ -8,13 +8,11 @@ export const Card = () => {
 			.then(data => {
 				// Se procesa la información
 				setPersonajes(data);
+				console.log(data);
 			});
 	}, []);
-	const listPersonajes = personajes.map(personaje => (
-		<li key={personaje.id}>
-			{personaje.name} - {personaje.species}
-		</li>
-	));
+
+	const listPersonajes = personajes.map(personaje => <li key={personaje.id}>{personaje.name}</li>);
 
 	return (
 		<div className="card" style={{ width: "18rem" }}>
@@ -25,7 +23,7 @@ export const Card = () => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">
-					<ul>{listPersonajes}</ul>
+					<ul>{}</ul>
 				</h5>
 				<p className="card-text">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
