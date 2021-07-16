@@ -12,9 +12,7 @@ export const Card = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
+				<p className="card-text">Star Wars planets and characters description by Iñaki</p>
 				<Link to={"/character/" + props.uid}>
 					<button type="button" className="btn btn-primary">
 						Click Me!

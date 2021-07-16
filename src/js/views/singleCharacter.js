@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 
-export const SingleCard = () => {
-	const [details, setDetails] = useState({});
+export const SingleCharacter = () => {
+	const [details, setDetails] = useState();
 	let { characterId } = useParams();
 	useEffect(() => {
 		fetch("https://www.swapi.tech/api/people/" + characterId)
@@ -24,24 +24,20 @@ export const SingleCard = () => {
 		);
 	});*/
 	return (
-		<div className="card" style={{ width: "18rem" }}>
+		<div className="card m-auto" style={{ width: "36rem" }}>
 			<img
 				className="card-img-top"
-				src="https://shoedoctor.eu/wp-content/uploads/2019/04/anonymous-silhouette.png"
+				src="https://assets.catawiki.nl/assets/2018/7/10/0/3/6/0367fc7b-738b-4c00-8e26-2672ffca6827.jpg"
 				alt="Card image cap"
 			/>
 			<div className="card-body">
 				<h5 className="card-title">
 					<ul>
-						<li>{details.properties.name}</li>
-						<li>{details.properties.gender}</li>
-						<li>{details.properties.url}</li>
-						<li>{details._id}</li>
+						<li>{details ? details.properties.name : ""}</li>
+						<li>{details ? details.properties.gender : ""}</li>
 					</ul>
 				</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
+				<p className="card-text">Star Wars</p>
 			</div>
 		</div>
 	);
