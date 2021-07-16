@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 
-export const SingleCharacter = () => {
+export const SinglePlanet = () => {
 	const [details, setDetails] = useState();
-	let { characterId } = useParams();
+	let { planetId } = useParams();
 	useEffect(() => {
-		fetch("https://www.swapi.tech/api/people/" + characterId)
+		fetch("https://www.swapi.tech/api/planets/" + planetId)
 			.then(response => response.json()) //Header o saber qué pasó con llamada
 			.then(data => {
 				// Se procesa la información
@@ -34,7 +34,7 @@ export const SingleCharacter = () => {
 				<h5 className="card-title">
 					<ul>
 						<li>Name: {details ? details.properties.name : ""}</li>
-						<li>Gender: {details ? details.properties.gender : ""}</li>
+						<li>Climate: {details ? details.properties.climate : ""}</li>
 					</ul>
 				</h5>
 				<p className="card-text">Star Wars</p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/home.scss";
-import { Card } from "./card";
+import { PlanetCard } from "./planetCard";
 
 export const PlanetsList = () => {
 	const [planets, setPlanets] = useState([]);
@@ -17,7 +17,7 @@ export const PlanetsList = () => {
 		if (index < 6) {
 			return (
 				<div className="col" key={planet.uid}>
-					<Card name={planet.name} url={planet.url} uid={planet.uid} />
+					<PlanetCard name={planet.name} url={planet.url} uid={planet.uid} />
 				</div>
 			);
 		}

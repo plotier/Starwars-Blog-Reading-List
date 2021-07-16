@@ -2,18 +2,18 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export const Card = props => {
+export const PlanetCard = props => {
 	return (
 		<div className="card" style={{ width: "18rem" }}>
 			<img
 				className="card-img-top"
-				src="https://i.blogs.es/26ba45/star-wars-eras/450_1000.jpeg"
+				src="https://reviewsyouread.files.wordpress.com/2021/03/10-more-star-wars-planets-as-countries.png"
 				alt="Card image cap"
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">Star Wars characters description by Iñaki</p>
-				<Link to={"/character/" + props.uid}>
+				<p className="card-text">Star Wars planets description by Iñaki</p>
+				<Link to={"/planet/" + props.uid}>
 					<button type="button" className="btn btn-primary">
 						More {props.name} info!
 					</button>
@@ -23,7 +23,7 @@ export const Card = props => {
 	);
 };
 
-Card.propTypes = {
+PlanetCard.propTypes = {
 	name: PropTypes.string,
 	url: PropTypes.string,
 	uid: PropTypes.string
