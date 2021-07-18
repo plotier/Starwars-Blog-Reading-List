@@ -16,8 +16,12 @@ export const Card = props => {
 				<Link to={"/character/" + props.uid}>
 					<button type="button" className="btn btn-primary">
 						More {props.name} info!
-					</button>
+					</button>{" "}
 				</Link>
+				<br />
+				<button type="button" className="btn btn-danger">
+					Favorite
+				</button>
 			</div>
 		</div>
 	);

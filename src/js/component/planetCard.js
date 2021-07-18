@@ -18,6 +18,10 @@ export const PlanetCard = props => {
 						More {props.name} info!
 					</button>
 				</Link>
+				<br />
+				<button type="button" className="btn btn-danger">
+					Favorite
+				</button>
 			</div>
 		</div>
 	);
