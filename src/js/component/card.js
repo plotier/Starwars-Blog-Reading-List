@@ -28,17 +28,17 @@ export const Card = props => {
 				<br />
 				<button
 					type="button"
-					className="btn btn-danger"
+					className="btn btn-outline-dark"
 					onClick={e => {
-						if (e.target.className == "btn btn-danger") {
-							e.target.className = "btn btn-warning";
-						} else {
+						if (e.target.className == "btn btn-outline-dark") {
 							e.target.className = "btn btn-danger";
+						} else {
+							e.target.className = "btn btn-outline-dark";
 						}
 						actions.addFavorites(props.name);
 						console.log(store.favorites);
 					}}>
-					fav
+					♥
 				</button>
 			</div>
 		</div>

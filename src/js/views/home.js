@@ -7,11 +7,11 @@ import { PlanetsList } from "../component/planetsList";
 export const Home = () => {
 	return (
 		<div className="container text-center mt-5">
-			<h1 className="m-4 display-1">Personajes</h1>
+			<h1 className="m-4 display-1">Characters</h1>
 			<div className="row">
 				<CharactersList />
 			</div>
-			<h1 className="m-4 display-1">Planetas</h1>
+			<h1 className="m-4 display-1">Planets</h1>
 			<div className="row">
 				<PlanetsList />
 			</div>

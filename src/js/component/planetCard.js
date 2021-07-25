@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const PlanetCard = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="card" style={{ width: "18rem" }}>
 			<img
@@ -19,8 +21,19 @@ export const PlanetCard = props => {
 					</button>
 				</Link>
 				<br />
-				<button type="button" className="btn btn-danger">
-					Favorite
+				<button
+					type="button"
+					className="btn btn-outline-dark"
+					onClick={e => {
+						if (e.target.className == "btn btn-outline-dark") {
+							e.target.className = "btn btn-danger";
+						} else {
+							e.target.className = "btn btn-outline-dark";
+						}
+						actions.addFavorites(props.name);
+						console.log(store.favorites);
+					}}>
+					♥
 				</button>
 			</div>
 		</div>
