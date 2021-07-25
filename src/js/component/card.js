@@ -26,8 +26,19 @@ export const Card = props => {
 					</button>{" "}
 				</Link>
 				<br />
-				<button type="button" className="btn btn-danger">
-					Favorite
+				<button
+					type="button"
+					className="btn btn-danger"
+					onClick={e => {
+						if (e.target.className == "btn btn-danger") {
+							e.target.className = "btn btn-warning";
+						} else {
+							e.target.className = "btn btn-danger";
+						}
+						actions.addFavorites(props.name);
+						console.log(store.favorites);
+					}}>
+					fav
 				</button>
 			</div>
 		</div>

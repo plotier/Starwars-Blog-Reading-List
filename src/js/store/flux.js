@@ -54,6 +54,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						setStore({ characters: data.results });
 					});
+			},
+			addFavorites: name => {
+				setStore({ favorites: [...getStore().favorites, name] });
 			}
 		}
 	};
