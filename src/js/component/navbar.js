@@ -10,8 +10,15 @@ import Popper from "popper.js";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const favoriteList = store.favorites.map((item, index) => (
-		<a className="dropdown-item" key={index} href="#">
+		<a className="dropdown-item d-flex justify-content-between" key={index} href="#">
 			<li>{item}</li>
+			<button
+				onClick={() => {
+					actions.removeFavorites(index);
+					console.log(index);
+				}}>
+				<i className="fa fa-trash " />
+			</button>
 		</a>
 	));
 	return (
