@@ -17,9 +17,7 @@ export const Card = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">
-					<ul>{listCharacters}</ul>
-				</p>
+				<p className="card-text">Star Wars characters by Iñaki.</p>
 				<Link to={"/character/" + props.uid}>
 					<button type="button" className="btn btn-primary">
 						More {props.name} info!

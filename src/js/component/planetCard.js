@@ -14,7 +14,7 @@ export const PlanetCard = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">Star Wars planets description by Iñaki</p>
+				<p className="card-text">Star Wars planets by Iñaki</p>
 				<Link to={"/planet/" + props.uid}>
 					<button type="button" className="btn btn-primary">
 						More {props.name} info!
